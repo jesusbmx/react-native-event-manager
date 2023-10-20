@@ -30,14 +30,14 @@ function ComponentA(): JSX.Element {
 
 The ComponentB notify a change to the 'onUpdate' state
 ```js
-import { EventManager } from 'react-native-event-manager'
+import { notifyEvent } from 'react-native-event-manager'
 
 function ComponentB(): JSX.Element {
 
   const [count, setCount] = useState(0)
 
   const handlePress = () => {
-    EventManager.get().notify('onUpdate', count)
+    notifyEvent('onUpdate', count)
     setCount(count + 1)
   }
 
@@ -110,6 +110,11 @@ useOnEvent(eventName: string, callback: Callback<any>)
 useOnEvents(observers: { [key: string]: Callback<any>; })
 
     A React hook for subscribing to multiple events specified in the observers object. Automatically removes all listeners on component unmount.
+
+#### notifyEvent Function
+notifyEvent<V>(eventName: string, value?: V): void
+
+    Notifies all listeners of the specified event with an optional value.
 
 
 ## Contributing

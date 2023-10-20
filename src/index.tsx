@@ -248,3 +248,7 @@ export const useOnEvents = (
 
   }, [])
 }
+
+export function notifyEvent<V>(eventName: string, value?: V) {
+  EventManager.get().notify(eventName, value)
+}
