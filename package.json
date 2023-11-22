@@ -159,8 +159,5 @@
         }
       ]
     ]
-  },
-  "dependencies": {
-    "react-native-event-manager": "^0.1.2"
   }
 }
